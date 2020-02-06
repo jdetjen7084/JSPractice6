@@ -48,8 +48,30 @@ const storedResults = testResults.slice();
 testResults.push(5.9);
 console.log(testResults, storedResults);
 
+//essentially a boolean if item is in an array, or -1 if false
+console.log(testResults.includes(3.4));
+
 //can select a part of an array with slice() too
 const newResults = testResults.slice(0, 2);
 //concat() similar to push() but combines arrays, push() would add array inside array
 const moreResults = testResults.concat([3.99, 22]);
-console.log(moreResults, newResults)
+console.log(moreResults, newResults);
+//looks for first item in an array, if multiple are present it stops at first instance
+console.log(testResults.indexOf(5));
+//looks for last instance of item
+console.log(testResults.lastIndexOf(5));
+
+const people = [{name: 'name1'}, {name: 'name2'}];
+//console.log(person.indexOf({name: 'name2'}));
+//this will result in -1 since it won't find anything but doesn't want to throw an error
+
+//find() executes a function in the array for you, but takes 3 arguments
+const name = people.find((person, idx, persons) => {
+    return person.name === 'name2';
+});
+console.log(name2);
+
+const namedPeople = people.find((person, idx, persons) => {
+    return person.name === 'name2';
+});
+console.log(namedPeople);
