@@ -75,3 +75,42 @@ const namedPeople = people.find((person, idx, persons) => {
     return person.name === 'name2';
 });
 console.log(namedPeople);
+
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax = 0.19;
+const taxAdjustPrices = [];
+// for(const price of prices) {
+//     taxAdjustPrices.push(price * (1 + tax));
+// }
+prices.forEach((price, idx, prices) => {
+    const priceObj = {index: idx, taxAdjPrice: price * (1 + tax)}
+    taxAdjustPrices.push(priceObj);
+});
+console.log(taxAdjustPrices);
+
+//map() transforms arrays
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
+    const priceObj = {index: idx, taxAdjPrice: price * (1 + tax)}
+    return priceObj;
+});
+console.log(prices, taxAdjustedPrices);
+
+const sortedPrices = prices.sort((a, b) => {
+    if (a > b) {
+        return 1;
+    } else if ( a === b) {
+        return 0;
+    } else {
+        return -1;
+    }
+});
+//reverse() will reverse the logic, but is usually better to just write a reversed logic in sort()
+console.log(sortedPrices.reverse());
+
+//determined by boolean: if true it will return, if false it will not
+const filteredArray = prices.filter((price, idx, prices) => {
+    return price > 6;
+});
+//below is same as above: filter() takes 3 arguments, but in arrow functions, we don't need the anonymous parts
+//const filteredArray = prices.filter(price => price > 6);
+console.log(filteredArray);
