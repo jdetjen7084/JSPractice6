@@ -114,3 +114,15 @@ const filteredArray = prices.filter((price, idx, prices) => {
 //below is same as above: filter() takes 3 arguments, but in arrow functions, we don't need the anonymous parts
 //const filteredArray = prices.filter(price => price > 6);
 console.log(filteredArray);
+
+//reduce takes a function as its argument
+const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+console.log(sum);
+
+//indicate what to split the string by; creates array with the items split then
+const thing = 'new york;10.99;2000';
+const transformedThing = thing.split(';');
+
+//join combines items in array into a string; defaults to have comma between but if a space is used there won't be
+const nameFragments = ['name1', 'name2', 'name3'];
+const names = nameFragments.join(' ');
