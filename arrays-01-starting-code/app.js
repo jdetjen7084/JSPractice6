@@ -1,3 +1,5 @@
+//ARRAYS
+
 const numbers = [1, 2, 3];
 console.log(numbers);
 
@@ -138,3 +140,12 @@ const copiedPeople = people.map(person => ({
     name: person.name,
     age: person.age
 }));
+
+//array destructuring
+const nameData = ['first name', 'last name', 'Mr', 65];
+//const firstName = nameData[0];
+//const lastName = nameData[1];
+
+//the ellipses in this case is a 'rest operator' because it collects the rest of the info
+const [ firstName, lastName, ...otherInfo ] = nameData;
+console.log(firstName, lastName, otherInfo);
