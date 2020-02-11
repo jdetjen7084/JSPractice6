@@ -126,3 +126,15 @@ const transformedThing = thing.split(';');
 //join combines items in array into a string; defaults to have comma between but if a space is used there won't be
 const nameFragments = ['name1', 'name2', 'name3'];
 const names = nameFragments.join(' ');
+
+//spread operator: can copy an array and if items are pushed to array, changes won't be taken into account
+const copiedNameFragments = [...nameFragments];
+nameFragments.push('Mr');
+console.log(nameFragments, copiedNameFragments);
+console.log(Math.min(...prices));
+
+const people = [{ name: 'person name', age: 42 }, { name: 'person2 name', age: 21 }];
+const copiedPeople = people.map(person => ({
+    name: person.name,
+    age: person.age
+}));
