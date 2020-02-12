@@ -42,3 +42,18 @@ for (const value of personData.values()) {
 
 //Maps better for performance for large quantities of data; Objects are better for small to medium collections of data
 //Maps take longer to create because of syntax but have better performance with adding/removing data frequently
+
+
+//WEAK SETS and WEAK MAPS
+
+let person = {name: 'name1'};
+const persons = new WeakSet();
+persons.add(person);
+//if person is needed for an operation then not required anymore, you can set person = null which clears out that memory
+//if use Set(), it will stay even if you don't need it anymore
+//if use WeakSet(), garbage collection will delete items in it
+
+const personData = new WeakMap();
+personData.set(person, 'more info');
+person = null;
+//same as above: will garbage collect if use WeakMap()
